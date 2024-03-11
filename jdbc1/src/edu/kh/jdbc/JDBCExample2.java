@@ -7,7 +7,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-public class JDBCExample2 {
+public class JDBCExample2 { 
 	public static void main(String[] args) {
 		
 		// 입력 받은 급여보다 많이 받는 사원의
