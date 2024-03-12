@@ -1,4 +1,4 @@
-package edu.kh.jdbc.common;
+package edu.kh.dept.common;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -47,7 +47,12 @@ public class JDBCTemplate {
 				// - k:v 모두 String인 Map
 				// - 파일 입출력하기 편리한 기능을 제공
 				
-				prop.loadFromXML(new FileInputStream("driver.xml"));
+				
+				// 컴파일된 driver.xml 파일의 위치를 얻어오는 코드
+				String path = JDBCTemplate.class.getResource("/edu/kh/dept/sql/driver.xml").getPath();
+				
+				
+				prop.loadFromXML(new FileInputStream(path));
 				// 프로젝트 최상단 폴더에 존재하는
 				// driver.xml 파일을 읽어와 Properties 객체에 저장(적재)
 				
