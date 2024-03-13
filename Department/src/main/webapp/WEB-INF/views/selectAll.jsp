@@ -12,7 +12,9 @@
 <body>
 
 	<h1>전체 부서 조회</h1>
+
 	
+
 	<table border="1">
 		
 		<thead>
@@ -40,11 +42,32 @@
 				</tr>
 				
 			</c:forEach>
-		</tbody>
-	
-	
+		</tbody>	
 	
 	</table>
+
+
+	<%-- session scope로 전달 받은 message가 있으면 alert() 출력 --%>
+	<c:if test="${not empty message}" >
+		<%-- message: 
+			page ~ application 까지 message 속성이 있는지 확인해서 
+			존재하는 scope의 값을 얻어옴
+		--%>
+		<script>
+			const message = "${message}";
+			alert(message);
+		</script>
+
+		<%-- session 은 브라우저 종료 또는 만료 시 까지 유지 
+		  -> 현재 페이지에 들어올 때 마다 session의 message가 계속 출력되는
+			 문제가 발생함!!!
+		  -> 1회만 message를 출력한 후 제거
+		--%>
+		<c:remove var="message" scope="session" />
+			
+
+	</c:if>
+
 
 </body>
 </html>

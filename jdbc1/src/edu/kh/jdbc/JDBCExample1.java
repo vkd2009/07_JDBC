@@ -32,7 +32,7 @@ public class JDBCExample1 {
 		// Statement
 		// - SQL을 String 형태로 DB에 전달하고
 		//   결과를 받아오는 객체
-		Statement stmt = null;
+		Statement stmt =  null;
 		
 		// ResultSet
 		// - SELECT 결과를 저장하는 객체
