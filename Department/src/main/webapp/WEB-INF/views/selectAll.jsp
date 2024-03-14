@@ -23,6 +23,9 @@
 				<th>부서 코드 (DEPT_ID)</th>
 				<th>부서 명   (DEPT_TITLE)</th>
 				<th>지역 코드 (LOCATION_ID)</th>
+
+				<th>수정 버튼</th>
+				<th>삭제 버튼</th>
 			</tr>
 		</thead>
 		
@@ -32,13 +35,18 @@
 				
 				<tr>
 					<%-- vs.count : 현재 반복 횟수 (1부터 시작) --%>
-					<td>${vs.count}</td>
-					
-					<td>${dept.deptId}</td>
-					
-					<td>${dept.deptTitle}</td>
-					
-					<td>${dept.locationId}</td>									
+					<td>${vs.count}</td>					
+					<td>${dept.deptId}</td>					
+					<td>${dept.deptTitle}</td>					
+					<td>${dept.locationId}</td>		
+
+					<th>
+						<button type="button" class="update-btn">수정</button>
+					</th>
+
+					<th>
+						<button type="button" class="delete-btn">삭제</button>
+					</th>
 				</tr>
 				
 			</c:forEach>
@@ -68,6 +76,8 @@
 
 	</c:if>
 
+
+	<script src="/resources/js/selectAll.js"></script>
 
 </body>
 </html>
