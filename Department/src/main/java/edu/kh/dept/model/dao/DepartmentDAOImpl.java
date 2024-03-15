@@ -203,9 +203,11 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 		return result;
 	}
 	
+	// 부서명 검색
 	@Override
 	public List<Department> search(Connection conn, String keyword) throws SQLException {
 	
+		// 참조하는 list는 있지만 안에 내용이 없는 상태
 		List<Department> deptList = new ArrayList<Department>();
 		
 		try {
@@ -216,9 +218,16 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, keyword);
 			
-			rs = stmt.executeQuery(sql);
 			
-			while(rs.next()) {
+			// SQL(SELECT) 수행 후 결과 (ResultSet) 반환 받기
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {				
+				
+				//	String deptId 		= rs.getString(1); // 조회 결과 컬럼 순서 (1번 컬럼)
+				//	String deptTitle 	= rs.getString(2); // 조회 결과 컬럼 순서 (2번 컬럼)
+				//	String locationId = rs.getString(3); // 조회 결과 컬럼 순서 (3번 컬럼)
 				
 				String deptId = rs.getString("DEPT_ID");
 				String deptTitle = rs.getString("DEPT_TITLE");
@@ -226,12 +235,13 @@ public class DepartmentDAOImpl implements DepartmentDAO{
 				
 				Department dept = new Department(deptId, deptTitle, locationId);
 				
+				// deptList에 추가
 				deptList.add(dept);
 			}
 			
 		}finally {
 			close(rs);
-			close(stmt);
+			close(pstmt);
 		}
 				
 		return deptList;

@@ -207,13 +207,14 @@ public class DepartmentServiceImpl implements DepartmentService {
 	
 
 	
-	
+	// 부서명 검색
 	@Override
 	public List<Department> search(String keyword) throws SQLException {
 			
+		// 1. 커넥션 생성
 		Connection conn = getConnection();
 		
-		
+		// 2. dao 메서드 호출 후 결과 반환 받기
 		List<Department> deptList = dao.search(conn, keyword);
 		
 		close(conn);

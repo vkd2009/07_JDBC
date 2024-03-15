@@ -57,7 +57,7 @@ public interface DepartmentService {
 	int updateDepartment(Department dept) throws SQLException;
 	
 	/** 부서 조회
-	 * @return
+	 * @return detpList
 	 * @throws SQLException
 	 */
 
