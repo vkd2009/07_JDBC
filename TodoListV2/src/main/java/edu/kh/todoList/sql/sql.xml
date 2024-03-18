@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+	
+
+	<entry key="listadd">
+		INSERT INTO TB_TODO
+		VALUES(SEQ_TODO_NO.NEXTVAL, ? , ?, DEFAULT, DEFAULT)
+	</entry>
+
+	<entry key="selectAll">
+		SELECT TODO_NO, TODO_TITLE, COMPLETE,
+			TO_CHAR(REG_DATE, 'YYYY-MM-DD HH24:MI:SS') REG_DATE
+		FROM TB_TODO
+		ORDER BY TODO_NO
+	</entry>
+
+ <entry key="getCompleteCount">
+	SELECT COUNT(*)
+	FROM TB_TODO
+	WHERE COMPLETE = 'Y'
+</entry>
+
+
+	<entry key="selectTodo">
+	  SELECT TODO_NO, TODO_TITLE, TODO_CONTENT, COMPLETE,
+				TO_CHAR(REG_DATE, 'YYYY-MM-DD HH24:MI:SS') REG_DATE
+		FROM TB_TODO
+		WHERE TODO_NO = ?
+	</entry>
+
+	<entry key="deletTodo">
+		DELETE FROM TB_TODO
+		WHERE TODO_NO = ?
+	</entry>
+
+</properties>

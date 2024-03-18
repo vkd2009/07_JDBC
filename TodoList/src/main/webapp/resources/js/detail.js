@@ -40,7 +40,7 @@ updateBtn.addEventListener("click", e => {
 
   location.href = `/todo/update?todoNo=${todoNo}`;
 
-});
+}); 
 
 
 

@@ -13,6 +13,10 @@ public class Todo {
 
 
 
+	
+
+
+
 	// 매개변수 생성자(할 일 목록 조회)
 	public Todo(int todoNo, String todoTitle, String complete, String regDate) {
 		super();
