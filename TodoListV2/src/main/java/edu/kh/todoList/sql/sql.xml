@@ -33,5 +33,17 @@
 		DELETE FROM TB_TODO
 		WHERE TODO_NO = ?
 	</entry>
+	
+	<entry key = "updateList">	
+	UPDATE TB_TODO
+		SET TODO_NO = ?,
+		TODO_CONTENT = ?
+		WHERE TODO_TITLE = ?
+	</entry>
+	
+	<entry key = "selectOne">
+	  SELECT * FROM TB_TODO
+		WHERE TODO_TITLE = ? 
+	</entry>
 
 </properties>

@@ -11,13 +11,16 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-@WebServlet("/todoList/update")
+@WebServlet("/todoTitle/update")
 public class UpdateServlet extends HttpServlet{
 
+	
+	
+	
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
-		String listNo = req.getParameter("todoNo");
+		String listNo = req.getParameter("listTitle");
 		
 		try {
 			TodoService service = new TodoServiceImpl();
@@ -25,14 +28,15 @@ public class UpdateServlet extends HttpServlet{
 			Todo todo = service.selectOne(listNo);
 			
 			if(todo == null) {
-				req.getSession().setAttribute("message", "해당 부서가 존재하지 않습니다");
-				resp.sendRedirect("/WEB-INF/views/main.jsp"); // 전체 조회로 redirect
-				
-			} else { // 조회 결과가 있을 경우
-				
 				req.setAttribute("todo", todo);
 				String path = "/WEB-INF/views/update.jsp";
-				req.getRequestDispatcher(path).forward(req, resp); // jsp
+				req.getRequestDispatcher(path).forward(req, resp);
+				
+				
+			} else { 
+				req.getSession().setAttribute("message", "해당 제목이 존재하지 않습니다");
+				resp.sendRedirect("/"); 
+				 
 			}
 			
 			
@@ -40,4 +44,6 @@ public class UpdateServlet extends HttpServlet{
 			e.printStackTrace();
 		}
 	}
+	
+
 }

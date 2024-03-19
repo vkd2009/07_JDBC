@@ -12,7 +12,7 @@
   <h1>${todo.todoNo}번 할 일 수정</h1> 
   <hr>
 
-  <form action="/todo/update" method="POST">
+  <form action="/todoTitle/update" method="POST">
     <div>
       제목 : <input type="text" name="todoTitle" value="${todo.todoTitle}">
     </div>

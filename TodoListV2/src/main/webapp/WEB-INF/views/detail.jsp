@@ -45,7 +45,7 @@
  
   <button id="deleteBtn" data-todo-no="${todo.listNo}">삭제</button>
 
-  <script src = "/resources/js/detail.js"></script>
+  <script src = "/resources/js/details.js"></script>
 
   <c:if test="${not empty message}" >
     <script>

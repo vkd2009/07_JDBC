@@ -7,10 +7,10 @@ updateBtnList.forEach( (btn,index) => {
         const tr = e.target.closest("tr");
 
      
-        const todoNo = tr.children[1].innerText;
+        const todoTitle = tr.children[1].innerText;
 
        
-        location.href = "/todoList/update?todoNo=" + todoNo; 
+        location.href = "/todoTitle/update?todoTitle=" + todoTitle; 
 
     });
 

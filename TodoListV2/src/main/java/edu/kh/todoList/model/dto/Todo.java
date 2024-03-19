@@ -13,6 +13,15 @@ public class Todo {
 	
 
 
+	public Todo(int listNo, String listTitle, String listContent) {
+		super();
+		this.listNo = listNo;
+		this.listTitle = listTitle;
+		this.listContent = listContent;
+	}
+
+
+
 	public Todo(int listNo, String listTitle, String listContent, String complete, String regDate) {
 		super();
 		this.listNo = listNo;

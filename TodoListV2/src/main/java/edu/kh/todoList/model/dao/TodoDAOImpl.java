@@ -197,7 +197,6 @@ public class TodoDAOImpl implements TodoDAO {
 			}
 						
 				
-			
 		}finally{
 			close(rs);
 			close(pstmt);
@@ -205,5 +204,8 @@ public class TodoDAOImpl implements TodoDAO {
 		
 		return todo;
 	}
+	
+	
+	
 	
 }
